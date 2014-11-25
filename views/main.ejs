@@ -1,0 +1,84 @@
+<head>
+    <title>iList</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/script_main.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style_main.css' />
+</head>
+
+<body>
+<div id="upper_bar" class="upper_bar">
+<div id="toolbar">
+		<ul>
+            <li><img id="logo" src="/images/logo_main.png" alt="iList Logo" width="66" height="43"/></li>
+			<li><a href="/main" onclick='get_recommended()'><%= username %></a></li>
+			<li><a href="#" onclick='new_list()'>New List</a></li>
+			<li><a href="#" onclick='show_lists()'>My Lists</a></li>
+			<li><a href="#" onclick='new_contact()'>Add Contact</a></li>
+			<li><a href="#" onclick='get_contacts()'>My Contacts</a></li>
+			<li><a href="#" onclick='get_interests()'>My Interests</a></li>
+			<li><a href="/logout" >Log out</a></li>
+            <li id="search_bar">
+            <input type="text" name="search" id="search" size="35" value="Search" onclick="clear_textbox(this, 'Search')" onblur="undo_click(this,'Search')"/>
+            <button type= "submit" id="search_bttn" onclick='find()'>
+            <img src="/images/search_icon.png" width="26" height="21" alt="submit" />
+            </button>
+            </li>					
+		</ul>
+</div>
+</div>
+
+<div id="page_container">
+<div id="side_bar" class="side_bar"></div>
+
+<div class="side_background"></div>
+
+<hr id="line" size="800">
+
+<div id="page">
+<h4 id="page_title">Page</h4>
+<object id="page_object"></object>
+</div>
+</div>
+
+<div id="popup">
+<h2>New List</h2>
+<p>Please fill out all the below information: </p>
+List Title: <input type="text" maxlength="50" id="title"/><br>
+List Description: <textarea id="desc" maxlength="256" cols="30"></textarea><br>
+
+Type of the list:
+<select id="type">
+  <option value="0">Public</option>
+  <option value="1">Contacts-Only</option>
+  <option value="2">Private</option>
+</select><br>
+
+Tag this List: <input type="text" maxlength="30" id="tag"/><br>
+<p id="added"></p>
+<button type="button" onclick="process_tags()">Add</button>
+
+<p id="note"></p>
+
+<div id="links">
+<p id="link_num">Link 1</p>
+Title: <input type="text" maxlength="50" id="l_title"/><br>
+Comment: <textarea id="comment" maxlength="256" cols="30"></textarea><br>
+URL: <input type="text" id="url"/><br>
+</div>
+
+<button type="button" onclick="add_link()">Add Link</button>
+<button type="button" onclick="remove_newlist()">Cancel</button>
+</div>
+
+<div id="popup2">
+<h2>Add New Contact</h2>
+Contact Username: <input type="text" maxlength="20" id="contact_username"/><br>
+<p id="note2"></p>
+<button type="button" onclick="add_contact()">Add Contact</button>
+<button type="button" onclick="remove_newcontact()">Cancel</button>
+</div>
+
+<div id="background"></div>
+
+</body>
+</html>

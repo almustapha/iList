@@ -1,0 +1,78 @@
+<head>
+    <title>iList</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/script_login.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+
+<form name="loginForm" id="login" action="/login" method="get">
+<div id="upper_bar">
+    <table id="login_table" cellspacing="0">
+    <tbody>
+    <tr>
+    <td><label>Username</label></td>
+    <td><label>Password</label></td>
+    </tr>
+    <tr>
+    <td><input type="text" name= "username" id="username" tabindex="2"/></td>
+    <td><input type="password" name= "password" id="password" tabindex="2"/></td>
+    <td><label onclick='process_login()'><input value="Log in" tabindex="4" type="submit" id="login_button"/></label></td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+</form>
+
+<p id="message"><%= msg %></p>
+
+    <img id="logo" src="images/logo.png" alt="iList Logo" width="572" height="382"/>
+    
+    <div id="signup_table">
+    <h2>Sign up. It's free (for now).</h2>
+    
+    <table id="signup_table" cellspacing="0" cellpadding="1">
+    <tbody>
+    <tr>
+    <td><label for="first_name">First Name:</label></td>
+    <td><input type="text" maxlength="50" id="first_name" name="first_name"/></td>
+    </tr>
+    <tr>
+    <td><label for="last_name">Last Name:</label></td>
+    <td><input type="text" maxlength="50" id="last_name" name="last_name"/></td>
+    </tr>
+    <tr>
+    <td class="label"><label for="user_name">Username:</label></td>
+    <td><input type="text" maxlength="20" id="user_name" name="user_name"/></td>
+    </tr>
+    <tr>
+    <td class="label"><label for="reg_email">Email:</label></td>
+    <td><input type="email" maxlength="100" id="reg_email" name="reg_email"/></td>
+    </tr>
+    <tr>
+    <td class="label"><label for="reg_email2">Re-enter Email:</label></td>
+    <td><input type="email" id="reg_email2" name="reg_email2"/></td>
+    </tr>
+    <tr>
+    <td class="label"><label for="reg_password">Password:</label></td>
+    <td><input type="password" maxlength="20" id="reg_password" name="reg_password"/></td>
+    </tr>
+    <tr>
+    <td><label id="signup_button" onclick='process_signup()'><input value="Sign up" tabindex="4" type="submit" id="signup"/></label></td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+
+<div id="popup">
+<p>Please add your interests below: </p>
+<p id="added"></p>
+Interest: <input type="text" maxlength="50" id="interest"/>
+<p id="note"></p>
+<button type="button" onclick="process_interest()">Add</button>
+</div>
+
+<div id="background"></div>
+
+</body>
